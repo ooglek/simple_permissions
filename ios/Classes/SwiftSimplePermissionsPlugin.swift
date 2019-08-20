@@ -48,7 +48,7 @@ public class SwiftSimplePermissionsPlugin: NSObject, FlutterPlugin, CLLocationMa
             result("iOS " + UIDevice.current.systemVersion)
             
         case "openSettings":
-            if let url = URL(string: UIApplicationOpenSettingsURLString) {
+            if let url = URL(string: UIApplication.openSettingsURLString) {
                 if UIApplication.shared.canOpenURL(url) {
                     if #available(iOS 10.0, *) {
                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -263,7 +263,7 @@ public class SwiftSimplePermissionsPlugin: NSObject, FlutterPlugin, CLLocationMa
     }
     
     private func getAudioPermissionStatus() -> AVAuthorizationStatus {
-        return AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeAudio)
+        return AVCaptureDevice.authorizationStatus(for: AVMediaType.audio)
     }
     
     private func requestAudioPermission(result: @escaping FlutterResult) -> Void {
@@ -281,12 +281,12 @@ public class SwiftSimplePermissionsPlugin: NSObject, FlutterPlugin, CLLocationMa
     }
     
     private func getCameraPermissionStatus() -> AVAuthorizationStatus {
-        return AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+        return AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
     }
     
     
     private func requestCameraPermission(result: @escaping FlutterResult) -> Void {
-        AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { response in
+        AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
             result(response)
         }
     }
