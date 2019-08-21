@@ -1,8 +1,23 @@
 # Simple Permissions
 
-**IMPORTANT: This is a copy of the Simple Permissions plugin from Ethras ([https://pub.dartlang.org/packages/simple_permissions](https://pub.dartlang.org/packages/simple_permissions)). The plugin repository has since been deleted, so commit history cannot be retained. This repo is for temporary private use only (quick fix of an iOS issue before migrating to another permission plugin). I am not going to maintain this project, so please avoid using it.**
+**IMPORTANT: This is based on the Simple Permissions plugin from Ethras ([https://pub.dartlang.org/packages/simple_permissions](https://pub.dartlang.org/packages/simple_permissions)). The plugin repository has since been deleted, so commit history cannot be retained.**
 
-A new flutter plugin for checking and requesting permissions on iOs and Android.
+**This is a maintained fork from [tamcy/simple_permissions](https://github.com/tamcy/simple_permissions)**
+
+A flutter plugin for checking and requesting permissions on iOs and Android.
+
+## Installation
+
+This plugin is currently not published to [pub.dev](https://pub.dev).
+
+To install add the path to the git repo to your pubspec.yaml:
+
+```yaml
+dependencies:
+  simple_permissions:
+    git:
+      url: https://github.com/tq-systems/simple_permissions.git
+```
 
 ## Getting Started
 
